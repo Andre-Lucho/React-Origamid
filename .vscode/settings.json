@@ -10,7 +10,7 @@
 
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always",
-  // "editor.colorDecorators": false,
+  "editor.colorDecorators": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontSize": 17,
   "eslint.format.enable": true,
@@ -19,7 +19,7 @@
   "editor.fontFamily": "'Droid Sans Mono', Ubuntu Mono, monospace",
   "editor.inlayHints.fontFamily": "'Arial'",
   "editor.linkedEditing": true,
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": false,
   "editor.mouseWheelZoom": true,
   "editor.mouseWheelScrollSensitivity": 2,
@@ -27,8 +27,8 @@
 
   "editor.tabSize": 2,
   "editor.tabCompletion": "on",
-  // "editor.wordWrap": "on",
-  "editor.wordWrapColumn": 200,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
 
   "eslint.quiet": true,
 
@@ -143,6 +143,5 @@
       "savePathReplacementPairs": null,
       "generateMap": false
     }
-  ],
-  "editor.wordWrap": "wordWrapColumn"
+  ]
 }

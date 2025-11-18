@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react';
+import Api from './teste-api/Api';
 
 function App() {
-  return <div>App</div>;
+  return (
+    <div>
+      <Api />
+    </div>
+  );
 }
 
 export default App;
