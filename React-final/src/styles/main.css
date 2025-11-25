@@ -1,8 +1,11 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-primary: 'Droid Sans Mono', Arial, sans-serif;
+  --font-primary: Helvetica, Arial, sans-serif;
   --font-secundary: 'Spectral', Georgia;
+
+  --color-ligth: #333;
+  --color-dark: #f9f9f9;
 }
 
 @layer base {
@@ -13,6 +16,45 @@
   }
 
   body {
-    @apply font-(--font-primary) m-0 text-[#333];
+    font-family: var(--font-primary);
+    @apply m-0 text-dark bg-[#181f2b];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0px;
+  }
+
+  ul,
+  li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input {
+    display: block;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    color: #333;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: 50rem;
+    padding: 0 1rem;
+    margin: 0 auto;
   }
 }
