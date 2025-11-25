@@ -16,6 +16,7 @@
   }
 
   body {
+    padding-top: 82px;
     font-family: var(--font-primary);
     @apply m-0 text-dark bg-[#181f2b];
   }
