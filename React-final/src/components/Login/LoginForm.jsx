@@ -1,9 +1,10 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Input from '../Form/Input';
 import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
-import { useEffect } from 'react';
+import Input from '../Form/Input';
 import Buttom from '../Form/Buttom';
+import { TOKEN_POST } from '../../api.js';
 
 const LoginForm = () => {
   const username = useForm('');
@@ -11,40 +12,29 @@ const LoginForm = () => {
 
   const { request, response, fetchData } = useFetch();
 
-  const handleSubmit = (event) => {
+  const getUser = (token) => {};
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const usernameValid = username.validate();
-    const passwordValid = password.validate();
+    if (username.validate() && password.validate()) {
+      const { url, options } = TOKEN_POST({
+        username: username.value,
+        password: password.value,
+      });
 
-    if (usernameValid && passwordValid) {
-      const requestData = {
-        url: 'https://dogsapi.origamid.dev/json/jwt-auth/v1/token',
-        options: {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            username: username.value,
-            password: password.value,
-          }),
-        },
-      };
-
-      const { url, options } = requestData;
       request(url, options);
     } else {
       console.log('Formulário inválido. Corrija os erros.');
     }
   };
 
-  useEffect(() => console.log(fetchData), [fetchData]);
+  useEffect(() => console.log(fetchData.token), [fetchData]);
 
   return (
     <section className="my-2">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit}>
         <Input label={'Usuário'} type={'text'} id={'username'} {...username} />
         <Input
           label={'Senha'}

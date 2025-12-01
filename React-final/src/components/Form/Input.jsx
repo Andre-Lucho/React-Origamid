@@ -1,8 +1,15 @@
 import useForm from '../../Hooks/useForm';
 
-const Input = ({ id, label, type, error, ...props }) => {
-  const { value, onChange } = useForm();
-
+const Input = ({
+  id,
+  label,
+  type,
+  error,
+  value,
+  onChange,
+  onBlur,
+  ...props
+}) => {
   return (
     <div className="my-4">
       <label htmlFor={id} className="">
@@ -12,6 +19,9 @@ const Input = ({ id, label, type, error, ...props }) => {
         type={type}
         id={id}
         name={id}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
         className="
         p-2 bg-purple-400 border-purple-400 border-2 rounded-md transition-all duration-200 hover:outline-0 hover:border-[#a42cff] hover:bg-purple-300 hover:shadow-[0_0_0_2px_#e9d4ff,0_0_0_2px_#b9a5cd] focus:outline-0 focus:border-[#a42cff] focus:bg-purple-300 focus:shadow-[0_0_0_2px_#e9d4ff,0_0_0_2px_#b9a5cd]"
         {...props}
