@@ -7,7 +7,7 @@ import { LuDoorOpen } from 'react-icons/lu';
 import Buttom from './Form/Buttom';
 
 const Header = () => {
-  const { login, data, userLogout } = useContext(UserContext);
+  const { userLogout, login, data } = useContext(UserContext);
 
   return (
     <header className="w-full py-1 px-0 fixed z-20 top-0 shadow-sm bg-[#161c26]">
