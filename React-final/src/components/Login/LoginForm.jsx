@@ -7,6 +7,8 @@ import Buttom from '../Form/Buttom';
 import { UserContext } from '../../UserContext';
 import Loading from '../Loading';
 
+import { FaRegPaperPlane } from 'react-icons/fa';
+
 const LoginForm = () => {
   const { userLogin, error, loading, login } = useContext(UserContext);
   const username = useForm('');
@@ -28,8 +30,13 @@ const LoginForm = () => {
   };
 
   return (
-    <section className="my-2">
-      <h1>Login</h1>
+    <section className="my-2 animeLeft">
+      <div className="flex items-center">
+        <h1 className="my-4 mx-0 font-secundary leading-1 text-4xl relative z-20 text-[#aac03eff]">
+          Login
+        </h1>
+        <FaRegPaperPlane className="absolute z-10 block w-4 h-4 left-20 top-4 text-[#5a6621]" />
+      </div>
       <form action="" onSubmit={handleSubmit}>
         <Input label={'Usuário'} type={'text'} id={'username'} {...username} />
         <Input

@@ -1,0 +1,23 @@
+Esquemas Acessibilidade total - daltonismo
+
+Esquema 1:
+Tespestade marinha: #2f4657ff
+Oliva Profundo: #aac03eff
+Papel Velho: #e2f0f7ff
+Ébano: #1a1816ff
+
+Esquema 2:
+Azul Lagoa: #16596dff
+Cáfe Rústico: #623a29ff
+Amêndoa: #e6dcd1ff
+Abismo Azul: #143649ff
+
+Esquema 3:
+Concreto Polido: #43404c
+Pêssego Coral: #ffbab2
+Nuvem Branca: #f8f8f8
+Azul da Meia-noite:#13253e
+
+
+vinho tinto: #311129
+
