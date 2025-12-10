@@ -62,7 +62,9 @@ export const UserStorage = ({ children }) => {
         navigate('/userPage');
       }
     } catch (err) {
-      const errorMessage = err.response.data.message || 'Erro desconhecido';
+      const errorMessage =
+        'Nome de usuário ou senha inválida. Verifique seus dados novamente' ||
+        'Erro desconhecido';
       setError(errorMessage);
       setLogin(false);
       throw err;
