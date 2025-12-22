@@ -5,8 +5,18 @@
   --font-primary: Helvetica, Arial, sans-serif;
   --font-secundary: 'Spectral', georgia;
 
-  --color-ligth: #1a1816ff;
+  --color-light: #1a1816ff;
   --color-dark: #e2f0f7ff;
+
+  --color-light-blue: #4799fd;
+  --color-dark-blue: #00132a;
+
+  --color-blue1: #89b4fa;
+  --color-blue2: #4799fd;
+  --color-blue3: #469bfd;
+  --color-green-blue1: #39aef9;
+  --color-green-blue2: #31b9f6;
+  --color-green-blue3: #27c8f2;
 }
 
 @layer base {
@@ -17,7 +27,7 @@
   }
 
   body {
-    padding-top: 82px;
+    padding-top: 5.125rem;
     font-family: var(--font-primary);
     @apply m-0 text-dark bg-[#181f2b];
   }
@@ -26,8 +36,11 @@
   h2,
   h3,
   h4,
-  p {
+  p,
+  div,
+  section {
     margin: 0px;
+    padding: 0px;
   }
 
   ul,

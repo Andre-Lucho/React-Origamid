@@ -1,18 +1,27 @@
 import { useState } from 'react';
 
 const types = {
+  username: {
+    regex: /^[a-zA-Z0-9]{6,}$/,
+    message: 'O usuário deve conter 6 caracteres',
+  },
+
   cep: {
     regex: /^\d{5}-?\d{3}$/,
     message: 'Cep inválido',
   },
+
   email: {
     regex:
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    message: 'Email inválido',
+    message: 'Preencha com um email válido',
   },
+
   password: {
-    regex: /^.{6,}$/,
-    message: 'Senha inválida',
+    regex:
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+    message:
+      'A senha deve conter 8 dígitos (1 letra maiúscula, 1 letra minúscula, 1 numeral e 1 caractere especial)',
   },
 };
 

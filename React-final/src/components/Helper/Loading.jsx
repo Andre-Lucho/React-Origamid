@@ -3,7 +3,7 @@ import { UserContext } from '../../UserContext';
 
 const Loading = () => {
   const { loading } = useContext(UserContext);
-  return <div>{loading && <span>Loading...</span>}</div>;
+  return <p>{loading && <span>Loading...</span>}</p>;
 };
 
 export default Loading;

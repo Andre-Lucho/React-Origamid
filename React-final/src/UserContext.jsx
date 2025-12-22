@@ -6,8 +6,8 @@ import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from './api.js';
 export const UserContext = createContext();
 
 export const UserStorage = ({ children }) => {
-  const [login, setLogin] = useState(false);
   const [data, setData] = useState(null);
+  const [login, setLogin] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -40,19 +40,21 @@ export const UserStorage = ({ children }) => {
     try {
       const UserRes = await axios.get(url, config);
       console.log(UserRes.data);
-      setData(UserRes.data);
-      setLogin(true);
+      if (UserRes.data) {
+        setData(UserRes.data);
+        setLogin(true);
+      }
     } catch (err) {
       console.error(err.response);
     }
   };
 
   const userLogin = async (username, password) => {
-    const { url } = TOKEN_POST();
+    const { url, body } = TOKEN_POST({ username, password });
     try {
       setError(null);
       setLoading(true);
-      const tokenRes = await axios.post(url, { username, password });
+      const tokenRes = await axios.post(url, body);
       // if (!tokenRes.ok) throw new Error('Token inválido');
       if (tokenRes.data) {
         // console.log(tokenRes.data);
@@ -76,7 +78,7 @@ export const UserStorage = ({ children }) => {
   const tokenValidate = async (token) => {
     const { url, config } = TOKEN_VALIDATE_POST(token);
     try {
-      const loginRes = await axios.post(url, {}, config);
+      const loginRes = await axios.post(url, {}, config); // {} = data = vazio
       // console.log(loginRes.data);
     } catch (err) {
       console.log(err);

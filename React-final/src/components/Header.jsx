@@ -14,7 +14,7 @@ const Header = () => {
       <nav className="flex justify-between items-center mx-6 h-16">
         <Link to={'/'} aria-label="Home" className="py-2 px-0">
           {/* logo */}
-          <FaRegPaperPlane className="mr-1.5 h-8 w-8 text-[#aac03eff]" />
+          <FaRegPaperPlane className="mr-1.5 h-8 w-8 text-[#4799fd]" />
         </Link>
         <div className="flex items-center">
           {login ? (
@@ -33,7 +33,7 @@ const Header = () => {
               Login / Criar
             </Link>
           )}
-          <LuDoorOpen className="ml-1.5 mb-1 h-6 w-8 text-[#aac03eff]" />
+          <LuDoorOpen className="ml-1.5 mb-1 h-6 w-8 text-[#4799fd]" />
         </div>
       </nav>
     </header>
