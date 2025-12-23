@@ -58,12 +58,14 @@ const LoginForm = () => {
                   {...password}
                 />
                 {loading ? (
-                  <Buttom label={'Entrar'} disabled />
+                  <>
+                    <Buttom label={'Entrar'} disabled />
+                    <Loading loading={loading} />
+                  </>
                 ) : (
                   <Buttom label={'Entrar'} />
                 )}
 
-                <Loading />
                 <Error error={error} />
               </form>
               <Link
